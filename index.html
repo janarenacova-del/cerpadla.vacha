@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Servis a opravy čerpadel Hlinsko | Ladislav Vácha</title>
+
+  <meta name="description" content="Servis, opravy, prodej a instalace čerpadel a domácích vodáren. Ladislav Vácha – zkušenosti od roku 1996. Hlinsko a široké okolí. Pohotovostní služby i o víkendech.">
+
+  <meta name="keywords" content="čerpadla Hlinsko, opravy čerpadel Hlinsko, servis čerpadel Hlinsko, domácí vodárny Hlinsko, opravy vodáren, instalace čerpadel, instalatér Hlinsko">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: #0a294e;
+      background: #ffffff;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #062b57;
+      color: white;
+      padding: 18px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: 800;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 24px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #69b9ff;
+    }
+
+    .hero {
+      min-height: 610px;
+      background:
+        linear-gradient(90deg, rgba(5,38,78,.96), rgba(5,38,78,.82)),
+        linear-gradient(#0a4b8e, #0a4b8e);
+      color: white;
+      display: flex;
+      align-items: center;
+      padding: 70px 8%;
+    }
+
+    .hero-content {
+      max-width: 850px;
+    }
+
+    .small-title {
+      color: #76c2ff;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      font-size: clamp(42px, 6vw, 78px);
+      line-height: 1.02;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 21px;
+      max-width: 720px;
+      margin-bottom: 30px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 15px 24px;
+      border-radius: 7px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 17px;
+    }
+
+    .primary {
+      background: #2f78bd;
+      color: white;
+    }
+
+    .secondary {
+      background: white;
+      color: #062b57;
+    }
+
+    .emergency {
+      background: #f3f7fb;
+      padding: 28px 8%;
+      text-align: center;
+      border-bottom: 1px solid #dce7f2;
+    }
+
+    .emergency strong {
+      font-size: 22px;
+      color: #0b5da7;
+    }
+
+    section {
+      padding: 75px 8%;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .section-title h2 {
+      font-size: 38px;
+      color: #062b57;
+    }
+
+    .section-title p {
+      color: #64748b;
+      margin-top: 8px;
+    }
+
+    .services {
+      background: #f5f8fc;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .card {
+      background: white;
+      padding: 32px 25px;
+      border-radius: 10px;
+      box-shadow: 0 5px 20px rgba(0,0,0,.07);
+      border-top: 5px solid #2f78bd;
+    }
+
+    .card .icon {
+      font-size: 38px;
+      margin-bottom: 12px;
+    }
+
+    .card h3 {
+      margin-bottom: 8px;
+      font-size: 21px;
+    }
+
+    .about-container {
+      max-width: 1050px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 55px;
+      align-items: center;
+    }
+
+    .about h2 {
+      font-size: 40px;
+      margin-bottom: 20px;
+    }
+
+    .experience {
+      background: #062b57;
+      color: white;
+      padding: 45px;
+      border-radius: 12px;
+      text-align: center;
+    }
+
+    .experience .year {
+      font-size: 65px;
+      font-weight: 900;
+      color: #70baff;
+    }
+
+    .supplier {
+      background: #eef6ff;
+      text-align: center;
+    }
+
+    .supplier-content {
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .supplier h2 {
+      font-size: 36px;
+      margin-bottom: 15px;
+    }
+
+    .supplier a {
+      color: #0b5da7;
+      font-weight: bold;
+    }
+
+    .location {
+      text-align: center;
+    }
+
+    .location h2 {
+      font-size: 38px;
+      margin-bottom: 15px;
+    }
+
+    .location p {
+      max-width: 750px;
+      margin: auto;
+      font-size: 18px;
+    }
+
+    .contact {
+      background: #072968;
+      color: white;
+      text-align: center;
+    }
+
+    .contact h2 {
+      font-size: 42px;
+      margin-bottom: 10px;
+    }
+
+    .contact > p {
+      margin-bottom: 30px;
+      font-size: 18px;
+    }
+
+    .contact-boxes {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .contact-box {
+      background: rgba(255,255,255,.1);
+      padding: 22px 35px;
+      border-radius: 8px;
+      min-width: 280px;
+    }
+
+    .contact-box a {
+      color: white;
+      text-decoration: none;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    footer {
+      background: #041c3c;
+      color: #cbd5e1;
+      text-align: center;
+      padding: 25px;
+    }
+
+    @media (max-width: 750px) {
+      header {
+        justify-content: center;
+        text-align: center;
+      }
+
+      nav {
+        margin-top: 10px;
+      }
+
+      nav a {
+        margin: 0 7px;
+        font-size: 14px;
+      }
+
+      .hero {
+        min-height: 540px;
+      }
+
+      .hero p {
+        font-size: 18px;
+      }
+
+      .about-container {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 55px 6%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">LADISLAV VÁCHA</div>
+
+  <nav>
+    <a href="#sluzby">Služby</a>
+    <a href="#onas">O nás</a>
+    <a href="#pusobnost">Působnost</a>
+    <a href="#kontakt">Kontakt</a>
+  </nav>
+</header>
+
+<main>
+
+<section class="hero">
+  <div class="hero-content">
+
+    <div class="small-title">Hlinsko a široké okolí</div>
+
+    <h1>Instalatérství<br>a opravy čerpadel</h1>
+
+    <p>
+      Prodej, instalace, servis a opravy čerpadel a domácích vodáren.
+      Instalatérské práce a odborný servis se zkušenostmi od roku 1996.
+    </p>
+
+    <div class="buttons">
+      <a class="button primary" href="tel:+420724356751">
+        ☎ Zavolat 724 356 751
+      </a>
+
+      <a class="button secondary" href="#sluzby">
+        Zobrazit služby
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<div class="emergency">
+  <strong>🔧 Pohotovostní služby poskytujeme i o víkendech</strong>
+</div>
+
+
+<section class="services" id="sluzby">
+
+  <div class="section-title">
+    <h2>Naše služby</h2>
+    <p>Komplexní služby v oblasti čerpadel, vodáren a instalatérství.</p>
+  </div>
+
+  <div class="cards">
+
+    <div class="card">
+      <div class="icon">💧</div>
+      <h3>Čerpadla</h3>
+      <p>Prodej, instalace a odborný servis čerpadel.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🏠</div>
+      <h3>Domácí vodárny</h3>
+      <p>Instalace, servis a opravy domácích vodáren.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🔧</div>
+      <h3>Opravy</h3>
+      <p>Diagnostika závad a opravy čerpadel a vodárenských zařízení.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">⚙️</div>
+      <h3>Servis</h3>
+      <p>Pravidelný i pohotovostní servis zařízení.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🛠️</div>
+      <h3>Instalace</h3>
+      <p>Odborná montáž čerpadel, vodáren a souvisejících zařízení.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🚰</div>
+      <h3>Instalatérské práce</h3>
+      <p>Instalatérské práce související s vodou a čerpací technikou.</p>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="about" id="onas">
+
+  <div class="about-container">
+
+    <div>
+      <h2>Zkušenosti od roku 1996</h2>
+
+      <p>
+        Ladislav Vácha se oboru čerpadel, domácích vodáren a
+        instalatérských prací věnuje od roku 1996.
+      </p>
+
+      <br>
+
+      <p>
+        Zajišťuje prodej, instalaci, servis i opravy čerpací techniky
+        pro zákazníky v Hlinsku a širokém okolí.
+      </p>
+
+      <br>
+
+      <p>
+        V případě poruchy jsou k dispozici také pohotovostní služby
+        o víkendech.
+      </p>
+    </div>
+
+    <div class="experience">
+      <div class="year">1996</div>
+      <h3>Od tohoto roku se věnujeme oboru</h3>
+      <p>Zkušenosti, osobní přístup a odborný servis.</p>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="supplier">
+
+  <div class="supplier-content">
+
+    <h2>Čerpadla a příslušenství</h2>
+
+    <p>
+      Pro realizace, servis a prodej využíváme čerpací techniku,
+      náhradní díly a další potřebný sortiment.
+    </p>
+
+    <br>
+
+    <p>
+      Dodavatel:
+      <a href="https://www.kopro.cz/" target="_blank" rel="noopener">
+        KOPRO
+      </a>
+    </p>
+
+  </div>
+</section>
+
+
+<section class="location" id="pusobnost">
+
+  <h2>Hlinsko a široké okolí</h2>
+
+  <p>
+    Servis, opravy a instalace čerpadel a domácích vodáren poskytujeme
+    zákazníkům v Hlinsku a širokém okolí. Pro informace o výjezdu do
+    vaší obce nás kontaktujte telefonicky.
+  </p>
+
+</section>
+
+
+<section class="contact" id="kontakt">
+
+  <h2>Potřebujete servis nebo opravu?</h2>
+
+  <p>
+    Zavolejte nebo napište. Domluvíme další postup.
+  </p>
+
+  <div class="contact-boxes">
+
+    <div class="contact-box">
+      <p>Telefon</p>
+      <a href="tel:+420724356751">
+        ☎ 724 356 751
+      </a>
+    </div>
+
+    <div class="contact-box">
+      <p>E-mail</p>
+      <a href="mailto:cerpadlavacha@seznam.cz">
+        ✉ cerpadlavacha@seznam.cz
+      </a>
+    </div>
+
+  </div>
+
+</section>
+
+</main>
+
+<footer>
+  © Ladislav Vácha – Instalatérství a opravy čerpadel | Hlinsko a okolí
+</footer>
+
+</body>
+</html>
