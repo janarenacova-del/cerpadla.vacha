@@ -6,11 +6,10 @@
 
   <title>Servis a opravy čerpadel Hlinsko | Ladislav Vácha</title>
 
-  <meta name="description" content="Servis, opravy, prodej a instalace čerpadel a domácích vodáren. Ladislav Vácha – zkušenosti od roku 1996. Hlinsko a široké okolí. Pohotovostní služby i o víkendech.">
-
-  <meta name="keywords" content="čerpadla Hlinsko, opravy čerpadel Hlinsko, servis čerpadel Hlinsko, domácí vodárny Hlinsko, opravy vodáren, instalace čerpadel, instalatér Hlinsko">
+  <meta name="description" content="Prodej, instalace, servis a opravy čerpadel a domácích vodáren. Ladislav Vácha – zkušenosti od roku 1996. Hlinsko a široké okolí. Pohotovostní služby i o víkendech.">
 
   <style>
+
     * {
       box-sizing: border-box;
       margin: 0;
@@ -28,52 +27,74 @@
       line-height: 1.6;
     }
 
+    /* HLAVIČKA */
+
     header {
       background: #062b57;
       color: white;
       padding: 18px 7%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
       position: sticky;
       top: 0;
       z-index: 1000;
+      box-shadow: 0 2px 12px rgba(0,0,0,.15);
+    }
+
+    .header-inner {
+      max-width: 1250px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 25px;
     }
 
     .logo {
       font-size: 22px;
-      font-weight: 800;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    nav {
+      display: flex;
+      gap: 25px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
     }
 
     nav a {
       color: white;
       text-decoration: none;
-      margin-left: 24px;
       font-weight: bold;
     }
 
     nav a:hover {
-      color: #69b9ff;
+      color: #74c7ff;
     }
+
+    /* ÚVOD */
 
     .hero {
       min-height: 610px;
-      background:
-        linear-gradient(90deg, rgba(5,38,78,.96), rgba(5,38,78,.82)),
-        linear-gradient(#0a4b8e, #0a4b8e);
       color: white;
       display: flex;
       align-items: center;
       padding: 70px 8%;
+
+      background:
+        linear-gradient(
+          115deg,
+          #052b57 0%,
+          #073e78 55%,
+          #0c69ad 100%
+        );
     }
 
     .hero-content {
-      max-width: 850px;
+      max-width: 900px;
     }
 
     .small-title {
-      color: #76c2ff;
+      color: #77c8ff;
       text-transform: uppercase;
       letter-spacing: 2px;
       font-weight: bold;
@@ -82,13 +103,13 @@
 
     h1 {
       font-size: clamp(42px, 6vw, 78px);
-      line-height: 1.02;
-      margin-bottom: 20px;
+      line-height: 1.03;
+      margin-bottom: 22px;
     }
 
     .hero p {
       font-size: 21px;
-      max-width: 720px;
+      max-width: 780px;
       margin-bottom: 30px;
     }
 
@@ -101,15 +122,19 @@
     .button {
       display: inline-block;
       padding: 15px 24px;
-      border-radius: 7px;
+      border-radius: 8px;
       text-decoration: none;
       font-weight: bold;
       font-size: 17px;
     }
 
     .primary {
-      background: #2f78bd;
+      background: #2f86ca;
       color: white;
+    }
+
+    .primary:hover {
+      background: #47a5eb;
     }
 
     .secondary {
@@ -117,132 +142,374 @@
       color: #062b57;
     }
 
-    .emergency {
-      background: #f3f7fb;
-      padding: 28px 8%;
-      text-align: center;
-      border-bottom: 1px solid #dce7f2;
+    .secondary:hover {
+      background: #eaf6ff;
     }
 
-    .emergency strong {
-      font-size: 22px;
-      color: #0b5da7;
+    /* POHOTOVOSTNÍ PRUH */
+
+    .emergency-strip {
+      background: #1683c5;
+      color: white;
+      text-align: center;
+      padding: 22px 7%;
+      font-size: 20px;
+      font-weight: bold;
     }
+
+    .emergency-strip a {
+      color: white;
+      text-decoration: underline;
+    }
+
+    /* OBECNÉ */
 
     section {
-      padding: 75px 8%;
+      padding: 75px 7%;
+    }
+
+    .container {
+      max-width: 1180px;
+      margin: auto;
     }
 
     .section-title {
       text-align: center;
-      margin-bottom: 45px;
+      max-width: 850px;
+      margin: 0 auto 45px;
     }
 
     .section-title h2 {
-      font-size: 38px;
+      font-size: 40px;
+      line-height: 1.2;
       color: #062b57;
-    }
-
-    .section-title p {
-      color: #64748b;
-      margin-top: 8px;
-    }
-
-    .services {
-      background: #f5f8fc;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    .card {
-      background: white;
-      padding: 32px 25px;
-      border-radius: 10px;
-      box-shadow: 0 5px 20px rgba(0,0,0,.07);
-      border-top: 5px solid #2f78bd;
-    }
-
-    .card .icon {
-      font-size: 38px;
       margin-bottom: 12px;
     }
 
-    .card h3 {
+    .section-title p {
+      color: #61768b;
+      font-size: 18px;
+    }
+
+    /* SLUŽBY */
+
+    .services {
+      background: #f2f7fc;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+    }
+
+    .service-card {
+      background: white;
+      padding: 32px;
+      border-radius: 14px;
+      border-top: 5px solid #3287c8;
+      box-shadow: 0 7px 24px rgba(6,43,87,.08);
+    }
+
+    .service-card .icon {
+      font-size: 40px;
+      margin-bottom: 12px;
+    }
+
+    .service-card h3 {
+      font-size: 24px;
+      margin-bottom: 10px;
+      color: #062b57;
+    }
+
+    .service-card p {
+      color: #425e77;
+      margin-bottom: 12px;
+    }
+
+    .service-card ul {
+      padding-left: 20px;
+      color: #425e77;
+    }
+
+    .service-card li {
+      margin-bottom: 5px;
+    }
+
+    .emergency-card {
+      background: #e7f4ff;
+      border-top-color: #0b5f9e;
+    }
+
+    /* JAK TO FUNGUJE */
+
+    .how {
+      background: white;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .step {
+      background: #edf7ff;
+      padding: 28px;
+      border-radius: 12px;
+      border-bottom: 5px solid #2f86ca;
+    }
+
+    .step-number {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: #0b5f9e;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      margin-bottom: 15px;
+    }
+
+    .step h3 {
+      color: #062b57;
       margin-bottom: 8px;
-      font-size: 21px;
+    }
+
+    .step p {
+      color: #49647b;
+    }
+
+    /* KOPRO */
+
+    .kopro {
+      background:
+        linear-gradient(
+          135deg,
+          #062b57,
+          #0b5f9e
+        );
+
+      color: white;
+    }
+
+    .kopro .section-title h2 {
+      color: white;
+    }
+
+    .kopro .section-title p {
+      color: #d6ecff;
+    }
+
+    .kopro-intro {
+      max-width: 900px;
+      margin: 0 auto 40px;
+      text-align: center;
+      font-size: 18px;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .product-card {
+      background: white;
+      color: #0a294e;
+      border-radius: 14px;
+      overflow: hidden;
+      text-decoration: none;
+      box-shadow: 0 8px 25px rgba(0,0,0,.16);
+      transition: .2s;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .product-image {
+      height: 210px;
+      background:
+        linear-gradient(
+          135deg,
+          #e8f5ff,
+          #cce9fb
+        );
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 25px;
+    }
+
+    .product-image span {
+      font-size: 60px;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .product-image small {
+      color: #52728e;
+      font-weight: bold;
+    }
+
+    .product-text {
+      padding: 25px;
+    }
+
+    .product-text h3 {
+      font-size: 22px;
+      margin-bottom: 8px;
+    }
+
+    .product-text p {
+      color: #536b80;
+      margin-bottom: 15px;
+    }
+
+    .product-link {
+      color: #0b67aa;
+      font-weight: bold;
+    }
+
+    .kopro-bottom {
+      text-align: center;
+      margin-top: 35px;
+      font-size: 17px;
+    }
+
+    .kopro-bottom a {
+      color: white;
+      font-weight: bold;
+    }
+
+    /* POHOTOVOST */
+
+    .emergency-section {
+      background: #eaf6ff;
+    }
+
+    .emergency-box {
+      max-width: 1050px;
+      margin: auto;
+      background: white;
+      padding: 45px;
+      border-radius: 15px;
+      border-left: 7px solid #1683c5;
+      box-shadow: 0 8px 30px rgba(6,43,87,.09);
+
+      display: grid;
+      grid-template-columns: 1.5fr .8fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .emergency-box h2 {
+      color: #062b57;
+      font-size: 38px;
+      line-height: 1.2;
+      margin-bottom: 15px;
+    }
+
+    .emergency-box p {
+      color: #425e77;
+      font-size: 18px;
+    }
+
+    .emergency-phone {
+      background: #062b57;
+      color: white;
+      padding: 30px;
+      border-radius: 12px;
+      text-align: center;
+    }
+
+    .emergency-phone p {
+      color: #d7ecff;
+      margin-bottom: 10px;
+    }
+
+    .emergency-phone a {
+      color: white;
+      text-decoration: none;
+      font-size: 25px;
+      font-weight: bold;
+    }
+
+    /* O NÁS */
+
+    .about {
+      background: white;
     }
 
     .about-container {
       max-width: 1050px;
       margin: auto;
+
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1.3fr .8fr;
       gap: 55px;
       align-items: center;
     }
 
     .about h2 {
       font-size: 40px;
+      color: #062b57;
       margin-bottom: 20px;
     }
 
+    .about p {
+      color: #425e77;
+      margin-bottom: 15px;
+      font-size: 17px;
+    }
+
     .experience {
-      background: #062b57;
+      background: #0b5f9e;
       color: white;
       padding: 45px;
-      border-radius: 12px;
+      border-radius: 14px;
       text-align: center;
     }
 
     .experience .year {
       font-size: 65px;
       font-weight: 900;
-      color: #70baff;
+      color: #a6dcff;
     }
 
-    .supplier {
-      background: #eef6ff;
-      text-align: center;
+    .experience p {
+      color: white;
     }
 
-    .supplier-content {
-      max-width: 800px;
-      margin: auto;
-    }
-
-    .supplier h2 {
-      font-size: 36px;
-      margin-bottom: 15px;
-    }
-
-    .supplier a {
-      color: #0b5da7;
-      font-weight: bold;
-    }
+    /* PŮSOBNOST */
 
     .location {
+      background: #f2f7fc;
       text-align: center;
     }
 
     .location h2 {
       font-size: 38px;
+      color: #062b57;
       margin-bottom: 15px;
     }
 
     .location p {
-      max-width: 750px;
+      max-width: 800px;
       margin: auto;
       font-size: 18px;
+      color: #425e77;
     }
 
+    /* KONTAKT */
+
     .contact {
-      background: #072968;
+      background: #062b57;
       color: white;
       text-align: center;
     }
@@ -253,8 +520,9 @@
     }
 
     .contact > p {
-      margin-bottom: 30px;
       font-size: 18px;
+      margin-bottom: 30px;
+      color: #d9ecff;
     }
 
     .contact-boxes {
@@ -265,10 +533,10 @@
     }
 
     .contact-box {
-      background: rgba(255,255,255,.1);
-      padding: 22px 35px;
-      border-radius: 8px;
-      min-width: 280px;
+      background: #0b5f9e;
+      padding: 24px 35px;
+      border-radius: 10px;
+      min-width: 290px;
     }
 
     .contact-box a {
@@ -285,241 +553,756 @@
       padding: 25px;
     }
 
-    @media (max-width: 750px) {
-      header {
-        justify-content: center;
-        text-align: center;
+    /* MOBIL */
+
+    @media (max-width: 900px) {
+
+      .header-inner {
+        flex-direction: column;
       }
 
       nav {
-        margin-top: 10px;
+        justify-content: center;
+        gap: 14px;
+      }
+
+      .service-grid,
+      .steps,
+      .product-grid,
+      .emergency-box,
+      .about-container {
+        grid-template-columns: 1fr;
+      }
+
+    }
+
+    @media (max-width: 600px) {
+
+      header {
+        position: relative;
       }
 
       nav a {
-        margin: 0 7px;
         font-size: 14px;
+      }
+
+      section {
+        padding: 55px 6%;
       }
 
       .hero {
         min-height: 540px;
+        padding: 65px 6%;
       }
 
       .hero p {
         font-size: 18px;
       }
 
-      .about-container {
-        grid-template-columns: 1fr;
+      .service-card {
+        padding: 25px;
       }
 
-      section {
-        padding: 55px 6%;
+      .emergency-box {
+        padding: 28px;
       }
+
     }
+
   </style>
 </head>
 
+
 <body>
 
-<header>
-  <div class="logo">LADISLAV VÁCHA</div>
 
-  <nav>
-    <a href="#sluzby">Služby</a>
-    <a href="#onas">O nás</a>
-    <a href="#pusobnost">Působnost</a>
-    <a href="#kontakt">Kontakt</a>
-  </nav>
+<!-- HLAVIČKA -->
+
+<header>
+
+  <div class="header-inner">
+
+    <div class="logo">
+      LADISLAV VÁCHA
+    </div>
+
+    <nav>
+      <a href="#sluzby">Služby</a>
+      <a href="#vyber">Výběr čerpadla</a>
+      <a href="#prodej">Prodej</a>
+      <a href="#pohotovost">Pohotovost</a>
+      <a href="#onas">O nás</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+
+  </div>
+
 </header>
+
 
 <main>
 
+
+<!-- ÚVOD -->
+
 <section class="hero">
+
   <div class="hero-content">
 
-    <div class="small-title">Hlinsko a široké okolí</div>
+    <div class="small-title">
+      Hlinsko a široké okolí
+    </div>
 
-    <h1>Instalatérství<br>a opravy čerpadel</h1>
+    <h1>
+      Instalatérství<br>
+      a opravy čerpadel
+    </h1>
 
     <p>
-      Prodej, instalace, servis a opravy čerpadel a domácích vodáren.
-      Instalatérské práce a odborný servis se zkušenostmi od roku 1996.
+      Prodej, odborný výběr, instalace, servis a opravy
+      čerpadel a domácích vodáren.
+      Instalatérské práce a zkušenosti v oboru od roku 1996.
     </p>
 
     <div class="buttons">
-      <a class="button primary" href="tel:+420724356751">
+
+      <a class="button primary"
+         href="tel:+420724356751">
         ☎ Zavolat 724 356 751
       </a>
 
-      <a class="button secondary" href="#sluzby">
+      <a class="button secondary"
+         href="#sluzby">
         Zobrazit služby
       </a>
+
     </div>
 
   </div>
+
 </section>
 
-<div class="emergency">
-  <strong>🔧 Pohotovostní služby poskytujeme i o víkendech</strong>
+
+<!-- POHOTOVOSTNÍ PRUH -->
+
+<div class="emergency-strip">
+
+  🔧 Pohotovostní služby i o víkendech
+  &nbsp; • &nbsp;
+
+  <a href="tel:+420724356751">
+    724 356 751
+  </a>
+
 </div>
 
 
+<!-- SLUŽBY -->
+
 <section class="services" id="sluzby">
 
-  <div class="section-title">
-    <h2>Naše služby</h2>
-    <p>Komplexní služby v oblasti čerpadel, vodáren a instalatérství.</p>
+  <div class="container">
+
+    <div class="section-title">
+
+      <h2>Naše služby</h2>
+
+      <p>
+        Od výběru vhodného čerpadla přes instalaci
+        až po následný servis a opravy.
+      </p>
+
+    </div>
+
+
+    <div class="service-grid">
+
+
+      <div class="service-card">
+
+        <div class="icon">💧</div>
+
+        <h3>Prodej a výběr čerpadel</h3>
+
+        <p>
+          Nevíte, jaké čerpadlo je pro vás vhodné?
+          Pomůžeme s výběrem podle způsobu použití
+          a konkrétních podmínek.
+        </p>
+
+        <ul>
+          <li>konzultace před nákupem</li>
+          <li>pomoc s výběrem vhodného typu čerpadla</li>
+          <li>čerpací technika a příslušenství</li>
+          <li>možnost navazující odborné instalace</li>
+        </ul>
+
+      </div>
+
+
+      <div class="service-card">
+
+        <div class="icon">🏠</div>
+
+        <h3>Domácí vodárny</h3>
+
+        <p>
+          Pomoc s výběrem, instalací, servisem
+          a opravami domácích vodáren.
+        </p>
+
+        <ul>
+          <li>výběr vhodné domácí vodárny</li>
+          <li>instalace a zapojení</li>
+          <li>diagnostika problémů</li>
+          <li>servis a opravy</li>
+        </ul>
+
+      </div>
+
+
+      <div class="service-card">
+
+        <div class="icon">🔧</div>
+
+        <h3>Opravy čerpadel a vodáren</h3>
+
+        <p>
+          Při poruše nejprve zjistíme příčinu problému
+          a následně navrhneme vhodný postup opravy.
+        </p>
+
+        <ul>
+          <li>diagnostika závad</li>
+          <li>opravy čerpadel</li>
+          <li>opravy domácích vodáren</li>
+          <li>výměna potřebných dílů podle závady</li>
+        </ul>
+
+      </div>
+
+
+      <div class="service-card">
+
+        <div class="icon">⚙️</div>
+
+        <h3>Servis čerpací techniky</h3>
+
+        <p>
+          Odborný servis čerpadel, domácích vodáren
+          a souvisejících zařízení.
+        </p>
+
+        <ul>
+          <li>kontrola zařízení</li>
+          <li>servis čerpadel a vodáren</li>
+          <li>řešení provozních problémů</li>
+          <li>doporučení dalšího postupu</li>
+        </ul>
+
+      </div>
+
+
+      <div class="service-card">
+
+        <div class="icon">🛠️</div>
+
+        <h3>Instalace a zapojení</h3>
+
+        <p>
+          Po výběru vhodného zařízení je možné
+          domluvit také jeho odbornou instalaci.
+        </p>
+
+        <ul>
+          <li>montáž čerpadel</li>
+          <li>instalace domácích vodáren</li>
+          <li>zapojení potřebného příslušenství</li>
+          <li>kontrola funkčnosti po instalaci</li>
+        </ul>
+
+      </div>
+
+
+      <div class="service-card">
+
+        <div class="icon">🚰</div>
+
+        <h3>Instalatérské práce</h3>
+
+        <p>
+          Instalatérské práce související s vodou,
+          čerpací technikou a domácími vodárnami.
+        </p>
+
+        <ul>
+          <li>instalatérské práce související s instalací</li>
+          <li>úpravy souvisejících částí</li>
+          <li>řešení podle konkrétní situace zákazníka</li>
+        </ul>
+
+      </div>
+
+
+      <div class="service-card emergency-card">
+
+        <div class="icon">☎️</div>
+
+        <h3>Pohotovostní služby i o víkendech</h3>
+
+        <p>
+          Porucha čerpadla nebo domácí vodárny
+          nemusí přijít jen během pracovního týdne.
+          Po telefonické domluvě poskytujeme
+          pohotovostní služby také o víkendech.
+        </p>
+
+        <ul>
+          <li>telefonická domluva dalšího postupu</li>
+          <li>řešení naléhavých poruch</li>
+          <li>Hlinsko a široké okolí</li>
+        </ul>
+
+      </div>
+
+
+    </div>
+
   </div>
 
-  <div class="cards">
-
-    <div class="card">
-      <div class="icon">💧</div>
-      <h3>Čerpadla</h3>
-      <p>Prodej, instalace a odborný servis čerpadel.</p>
-    </div>
-
-    <div class="card">
-      <div class="icon">🏠</div>
-      <h3>Domácí vodárny</h3>
-      <p>Instalace, servis a opravy domácích vodáren.</p>
-    </div>
-
-    <div class="card">
-      <div class="icon">🔧</div>
-      <h3>Opravy</h3>
-      <p>Diagnostika závad a opravy čerpadel a vodárenských zařízení.</p>
-    </div>
-
-    <div class="card">
-      <div class="icon">⚙️</div>
-      <h3>Servis</h3>
-      <p>Pravidelný i pohotovostní servis zařízení.</p>
-    </div>
-
-    <div class="card">
-      <div class="icon">🛠️</div>
-      <h3>Instalace</h3>
-      <p>Odborná montáž čerpadel, vodáren a souvisejících zařízení.</p>
-    </div>
-
-    <div class="card">
-      <div class="icon">🚰</div>
-      <h3>Instalatérské práce</h3>
-      <p>Instalatérské práce související s vodou a čerpací technikou.</p>
-    </div>
-
-  </div>
 </section>
 
+
+<!-- VÝBĚR ČERPADLA -->
+
+<section class="how" id="vyber">
+
+  <div class="container">
+
+    <div class="section-title">
+
+      <h2>Nevíte, jaké čerpadlo vybrat?</h2>
+
+      <p>
+        Nemusíte znát přesný typ ani všechny technické parametry.
+        Zavolejte a společně probereme, k čemu čerpadlo potřebujete.
+        Podle konkrétní situace lze vybrat vhodné řešení
+        a následně domluvit také instalaci.
+      </p>
+
+    </div>
+
+
+    <div class="steps">
+
+
+      <div class="step">
+
+        <div class="step-number">1</div>
+
+        <h3>Zavoláte</h3>
+
+        <p>
+          Popíšete, k čemu čerpadlo potřebujete
+          nebo jaký problém právě řešíte.
+        </p>
+
+      </div>
+
+
+      <div class="step">
+
+        <div class="step-number">2</div>
+
+        <h3>Vybereme řešení</h3>
+
+        <p>
+          Podle konkrétních podmínek se domluví
+          vhodný typ čerpadla nebo vodárny.
+        </p>
+
+      </div>
+
+
+      <div class="step">
+
+        <div class="step-number">3</div>
+
+        <h3>Zajistíme techniku</h3>
+
+        <p>
+          Čerpací techniku, náhradní díly
+          a příslušenství lze zajistit z nabídky KOPRO.
+        </p>
+
+      </div>
+
+
+      <div class="step">
+
+        <div class="step-number">4</div>
+
+        <h3>Domluvíme instalaci</h3>
+
+        <p>
+          V případě potřeby lze domluvit odbornou montáž,
+          zapojení a kontrolu funkčnosti zařízení.
+        </p>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- KOPRO -->
+
+<section class="kopro" id="prodej">
+
+  <div class="container">
+
+    <div class="section-title">
+
+      <h2>Čerpadla a příslušenství KOPRO</h2>
+
+      <p>
+        Čerpací technika, příslušenství a náhradní díly
+        s možností konzultace výběru a následné instalace.
+      </p>
+
+    </div>
+
+
+    <div class="kopro-intro">
+
+      <p>
+        Pokud si nejste jistí výběrem, není nutné vybírat
+        čerpadlo bez předchozí konzultace.
+        Zavolejte a domluvíme, jaké řešení je
+        pro vaše použití vhodné.
+      </p>
+
+    </div>
+
+
+    <div class="product-grid">
+
+
+      <!-- TADY POZDĚJI VLOŽÍME FOTKU KOPRO -->
+
+      <a class="product-card"
+         href="https://www.kopro.cz/"
+         target="_blank"
+         rel="noopener">
+
+        <div class="product-image">
+
+          <div>
+
+            <span>💧</span>
+
+            <small>
+              ZDE BUDE FOTOGRAFIE KOPRO
+            </small>
+
+          </div>
+
+        </div>
+
+        <div class="product-text">
+
+          <h3>Ponorná čerpadla</h3>
+
+          <p>
+            Čerpací technika pro studny, vrty
+            a další vhodná použití.
+          </p>
+
+          <div class="product-link">
+            Prohlédnout nabídku KOPRO →
+          </div>
+
+        </div>
+
+      </a>
+
+
+      <!-- TADY POZDĚJI VLOŽÍME FOTKU KOPRO -->
+
+      <a class="product-card"
+         href="https://www.kopro.cz/"
+         target="_blank"
+         rel="noopener">
+
+        <div class="product-image">
+
+          <div>
+
+            <span>🏠</span>
+
+            <small>
+              ZDE BUDE FOTOGRAFIE KOPRO
+            </small>
+
+          </div>
+
+        </div>
+
+        <div class="product-text">
+
+          <h3>Domácí vodárny</h3>
+
+          <p>
+            Řešení pro zásobování domácností vodou
+            podle konkrétních podmínek.
+          </p>
+
+          <div class="product-link">
+            Prohlédnout nabídku KOPRO →
+          </div>
+
+        </div>
+
+      </a>
+
+
+      <!-- TADY POZDĚJI VLOŽÍME FOTKU KOPRO -->
+
+      <a class="product-card"
+         href="https://www.kopro.cz/"
+         target="_blank"
+         rel="noopener">
+
+        <div class="product-image">
+
+          <div>
+
+            <span>⚙️</span>
+
+            <small>
+              ZDE BUDE FOTOGRAFIE KOPRO
+            </small>
+
+          </div>
+
+        </div>
+
+        <div class="product-text">
+
+          <h3>Příslušenství a další technika</h3>
+
+          <p>
+            Příslušenství, náhradní díly
+            a další čerpací technika podle potřeby.
+          </p>
+
+          <div class="product-link">
+            Prohlédnout nabídku KOPRO →
+          </div>
+
+        </div>
+
+      </a>
+
+
+    </div>
+
+
+    <div class="kopro-bottom">
+
+      Kompletní nabídku naleznete na
+
+      <a href="https://www.kopro.cz/"
+         target="_blank"
+         rel="noopener">
+
+        www.kopro.cz
+
+      </a>
+
+      <br><br>
+
+      Konkrétní výběr čerpadla je možné
+      předem konzultovat telefonicky.
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- POHOTOVOST -->
+
+<section class="emergency-section" id="pohotovost">
+
+  <div class="emergency-box">
+
+    <div>
+
+      <h2>
+        Pohotovostní servis i o víkendech
+      </h2>
+
+      <p>
+        Máte poruchu čerpadla nebo domácí vodárny?
+        Zavolejte a popište problém.
+        Podle konkrétní situace domluvíme další postup
+        a možnost servisního výjezdu
+        v Hlinsku a širokém okolí.
+      </p>
+
+    </div>
+
+
+    <div class="emergency-phone">
+
+      <p>
+        Pohotovostní servis
+      </p>
+
+      <a href="tel:+420724356751">
+        ☎ 724 356 751
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- O NÁS -->
 
 <section class="about" id="onas">
 
   <div class="about-container">
 
     <div>
-      <h2>Zkušenosti od roku 1996</h2>
+
+      <h2>
+        Zkušenosti od roku 1996
+      </h2>
 
       <p>
-        Ladislav Vácha se oboru čerpadel, domácích vodáren a
-        instalatérských prací věnuje od roku 1996.
+        Ladislav Vácha se oboru čerpadel,
+        domácích vodáren a instalatérských prací
+        věnuje od roku 1996.
       </p>
 
-      <br>
-
       <p>
-        Zajišťuje prodej, instalaci, servis i opravy čerpací techniky
+        Zajišťuje prodej, pomoc s výběrem,
+        instalaci, servis i opravy čerpací techniky
         pro zákazníky v Hlinsku a širokém okolí.
       </p>
 
-      <br>
-
       <p>
-        V případě poruchy jsou k dispozici také pohotovostní služby
-        o víkendech.
+        Zákazník tak může řešit vše od výběru
+        vhodného zařízení přes jeho instalaci
+        až po následný servis a případnou opravu.
       </p>
+
     </div>
+
 
     <div class="experience">
-      <div class="year">1996</div>
-      <h3>Od tohoto roku se věnujeme oboru</h3>
-      <p>Zkušenosti, osobní přístup a odborný servis.</p>
+
+      <div class="year">
+        1996
+      </div>
+
+      <h3>
+        Zkušenosti v oboru od roku 1996
+      </h3>
+
+      <p>
+        Osobní přístup a odborný servis.
+      </p>
+
     </div>
 
   </div>
+
 </section>
 
 
-<section class="supplier">
+<!-- PŮSOBNOST -->
 
-  <div class="supplier-content">
+<section class="location">
 
-    <h2>Čerpadla a příslušenství</h2>
-
-    <p>
-      Pro realizace, servis a prodej využíváme čerpací techniku,
-      náhradní díly a další potřebný sortiment.
-    </p>
-
-    <br>
-
-    <p>
-      Dodavatel:
-      <a href="https://www.kopro.cz/" target="_blank" rel="noopener">
-        KOPRO
-      </a>
-    </p>
-
-  </div>
-</section>
-
-
-<section class="location" id="pusobnost">
-
-  <h2>Hlinsko a široké okolí</h2>
+  <h2>
+    Hlinsko a široké okolí
+  </h2>
 
   <p>
-    Servis, opravy a instalace čerpadel a domácích vodáren poskytujeme
-    zákazníkům v Hlinsku a širokém okolí. Pro informace o výjezdu do
-    vaší obce nás kontaktujte telefonicky.
+    Servis, opravy a instalace čerpadel
+    a domácích vodáren poskytujeme zákazníkům
+    v Hlinsku a širokém okolí.
+    Pro informace o možnosti výjezdu
+    do vaší obce nás kontaktujte telefonicky.
   </p>
 
 </section>
 
+
+<!-- KONTAKT -->
 
 <section class="contact" id="kontakt">
 
-  <h2>Potřebujete servis nebo opravu?</h2>
+  <h2>
+    Potřebujete poradit, servis nebo opravu?
+  </h2>
 
   <p>
-    Zavolejte nebo napište. Domluvíme další postup.
+    Zavolejte nebo napište.
+    Domluvíme další postup.
   </p>
+
 
   <div class="contact-boxes">
 
+
     <div class="contact-box">
+
       <p>Telefon</p>
+
       <a href="tel:+420724356751">
         ☎ 724 356 751
       </a>
+
     </div>
 
+
     <div class="contact-box">
+
       <p>E-mail</p>
+
       <a href="mailto:cerpadlavacha@seznam.cz">
         ✉ cerpadlavacha@seznam.cz
       </a>
+
     </div>
+
 
   </div>
 
 </section>
 
+
 </main>
 
+
 <footer>
-  © Ladislav Vácha – Instalatérství a opravy čerpadel | Hlinsko a okolí
+
+  © Ladislav Vácha – Instalatérství a opravy čerpadel |
+  Hlinsko a okolí
+
 </footer>
+
 
 </body>
 </html>
