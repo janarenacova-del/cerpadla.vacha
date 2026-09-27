@@ -79,14 +79,12 @@
       display: flex;
       align-items: center;
       padding: 70px 8%;
-
-      background:
-        linear-gradient(
-          115deg,
-          #052b57 0%,
-          #073e78 55%,
-          #0c69ad 100%
-        );
+      background: linear-gradient(
+        115deg,
+        #052b57 0%,
+        #073e78 55%,
+        #0c69ad 100%
+      );
     }
 
     .hero-content {
@@ -241,7 +239,7 @@
       border-top-color: #0b5f9e;
     }
 
-    /* JAK TO FUNGUJE */
+    /* JAK VYBRAT ČERPADLO */
 
     .how {
       background: white;
@@ -285,12 +283,11 @@
     /* KOPRO */
 
     .kopro {
-      background:
-        linear-gradient(
-          135deg,
-          #062b57,
-          #0b5f9e
-        );
+      background: linear-gradient(
+        135deg,
+        #062b57,
+        #0b5f9e
+      );
 
       color: white;
     }
@@ -330,35 +327,28 @@
       transform: translateY(-5px);
     }
 
-    .product-image {
-      height: 210px;
-      background:
-        linear-gradient(
-          135deg,
-          #e8f5ff,
-          #cce9fb
-        );
+    /* FOTOGRAFIE KOPRO */
 
+    .product-image {
+      height: 280px;
+      background: #ffffff;
       display: flex;
       justify-content: center;
       align-items: center;
-      text-align: center;
-      padding: 25px;
+      padding: 18px;
+      overflow: hidden;
     }
 
-    .product-image span {
-      font-size: 60px;
+    .product-image img {
       display: block;
-      margin-bottom: 10px;
-    }
-
-    .product-image small {
-      color: #52728e;
-      font-weight: bold;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
     }
 
     .product-text {
       padding: 25px;
+      border-top: 1px solid #e4edf5;
     }
 
     .product-text h3 {
@@ -449,7 +439,6 @@
     .about-container {
       max-width: 1050px;
       margin: auto;
-
       display: grid;
       grid-template-columns: 1.3fr .8fr;
       gap: 55px;
@@ -605,6 +594,10 @@
 
       .emergency-box {
         padding: 28px;
+      }
+
+      .product-image {
+        height: 250px;
       }
 
     }
@@ -895,7 +888,6 @@
 
     <div class="steps">
 
-
       <div class="step">
 
         <div class="step-number">1</div>
@@ -951,7 +943,6 @@
 
       </div>
 
-
     </div>
 
   </div>
@@ -992,7 +983,7 @@
     <div class="product-grid">
 
 
-      <!-- TADY POZDĚJI VLOŽÍME FOTKU KOPRO -->
+      <!-- 1. PONORNÉ ČERPADLO -->
 
       <a class="product-card"
          href="https://www.kopro.cz/"
@@ -1001,15 +992,9 @@
 
         <div class="product-image">
 
-          <div>
-
-            <span>💧</span>
-
-            <small>
-              ZDE BUDE FOTOGRAFIE KOPRO
-            </small>
-
-          </div>
+          <img
+            src="jjjj.jpg"
+            alt="Ponorné čerpadlo KOPRO">
 
         </div>
 
@@ -1031,7 +1016,7 @@
       </a>
 
 
-      <!-- TADY POZDĚJI VLOŽÍME FOTKU KOPRO -->
+      <!-- 2. DOMÁCÍ VODÁRNA -->
 
       <a class="product-card"
          href="https://www.kopro.cz/"
@@ -1040,15 +1025,9 @@
 
         <div class="product-image">
 
-          <div>
-
-            <span>🏠</span>
-
-            <small>
-              ZDE BUDE FOTOGRAFIE KOPRO
-            </small>
-
-          </div>
+          <img
+            src="kkkk.jpg"
+            alt="Domácí vodárna KOPRO">
 
         </div>
 
@@ -1070,7 +1049,7 @@
       </a>
 
 
-      <!-- TADY POZDĚJI VLOŽÍME FOTKU KOPRO -->
+      <!-- 3. PŘÍSLUŠENSTVÍ -->
 
       <a class="product-card"
          href="https://www.kopro.cz/"
@@ -1079,15 +1058,9 @@
 
         <div class="product-image">
 
-          <div>
-
-            <span>⚙️</span>
-
-            <small>
-              ZDE BUDE FOTOGRAFIE KOPRO
-            </small>
-
-          </div>
+          <img
+            src="lkl.jpg"
+            alt="Příslušenství k čerpací technice KOPRO">
 
         </div>
 
@@ -1119,9 +1092,7 @@
       <a href="https://www.kopro.cz/"
          target="_blank"
          rel="noopener">
-
         www.kopro.cz
-
       </a>
 
       <br><br>
@@ -1265,7 +1236,6 @@
 
   <div class="contact-boxes">
 
-
     <div class="contact-box">
 
       <p>Telefon</p>
@@ -1286,7 +1256,6 @@
       </a>
 
     </div>
-
 
   </div>
 
